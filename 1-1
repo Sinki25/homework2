@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double n,a,b,h,s,x;
+
+            n = double.Parse(Console.ReadLine());
+            a = 0;
+            b = 2;
+            h = (b - a) / n;
+            s = 0;
+            for(int i=0;i<=n;i++)
+            {
+                x = a + i * h;
+                s = s + h * Math.Sin(x * x);
+            }
+            Console.WriteLine(s);
+
+        }
+    }
+}
