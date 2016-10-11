@@ -22,7 +22,7 @@ namespace ConsoleHomework2
             while (Math.Abs(s - (s - y / f * x)) > e)
             {
                 f = f * n;
-                z = z * 2 * n;
+                z = z * 2 * n*(2*n-1);
                 s = s + (f * f / z * (2 * n + 1) * (2 * n + 1));
                 n++;
             }
