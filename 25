@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsolE5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Double S,a,k,f,f1,e;
+            e = 0.0001;
+            a = 2;
+            k = 1;
+            f = 1;
+            f1 = 1;
+            S = 0; 
+            while(Math.Abs(S-(S - (a / (f / f1 * f1))))>e)
+            {
+                a = a * 2;
+                f = f * 2 * k;
+                f1 = f1 * k;
+                k++;
+                S = S + (a / (f / f1 * f1));
+            }
+            S = -2 + 2 * S;
+            Console.WriteLine(S);
+            Console.WriteLine("Шаг равен {0}", k - 1);
+        }
+    }
+}
