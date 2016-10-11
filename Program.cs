@@ -4,37 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Console5
+namespace ConsoleHomework2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            double x, a, s, e, f, y, n, s0;
-            e = 0.0001;
-            x = double.Parse(Console.ReadLine());
-            a = double.Parse(Console.ReadLine());
-            s = 0;
-            n = 0;
-            y = 1;
-            f = 1;
-            s0 = 1;       
-            while (Math.Abs(s - (s - s0)) > e)
-            {
-                for (int i = 1; i < n; i++)
-                {
-                    y = y * x;
-                    f = f * i;
-                }
-                s0 = s0 * y / f;
-                for (int i = 0; i <= a - 1; i++)
-                    s0 = s0 * (a - i);
-                s = s + s0;
-                n++;
+            double x, a, e, s, n, y, f;
 
+            e = 0.00001;
+            a = Double.Parse(Console.ReadLine());
+            x = Double.Parse(Console.ReadLine());     
+            n = 1;
+            y = -1 + a;
+            f = 1;
+            s = y * x * Math.Log(x) * Math.Log(x) / f;
+            while (Math.Abs(s-(s - (y * x * Math.Log(x) * Math.Log(x) / f))) >e)
+            {
+                y = 1;
+                for (int i = 1; i <= n; i++)
+                    y = y * (-1 + a);
+                f = f * n;                                 
+                s = s + (y * x * Math.Log(x) * Math.Log(x) / f);
+                n++;
             }
             Console.WriteLine(s);
-            Console.WriteLine("Шаг равен {0}", n - 1);
+            Console.WriteLine("Шаг равен {0}", n-1);
+
+
+
         }
     }
 }
